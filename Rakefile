@@ -45,12 +45,12 @@ task :push do
 # system "bundle exec jekyll build"
 # puts
 # cd '_site' do
+#k
   puts "Pushing to `master' branch:"
   system "git add -A"
   system "git commit -m 'Update at #{Time.now.utc}'"
   system "git push origin master"
-  puts
-  "`master' branch updated."
+  puts "`master' branch updated."
 end
 # end
 
