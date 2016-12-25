@@ -34,24 +34,17 @@ end
 
 desc "Push to github"
 task :push do
-# puts
-# "Pushing to `master' branch:"
-# system "git push origin master"
-# puts
-# "`master' branch updated."
-# puts
-# puts
-# "Building site...."
-# system "bundle exec jekyll build"
-# puts
-# cd '_site' do
-#k
-  puts "Pushing to `master' branch:"
-  system "git add -A"
-  system "git commit -m 'Update at #{Time.now.utc}'"
-  system "git push origin master"
-  puts "`master' branch updated."
+  system "git push origin blog"
+  puts "Building site...."
+  system "bundle exec jekyll build"
+
+  cd '_site' do
+    puts "Pushing to `master' branch:"
+    system "git add -A"
+    system "git commit -m 'Update at #{Time.now.utc}'"
+    system "git push origin master"
+    puts "`master' branch updated."
+  end
 end
-# end
 
 
